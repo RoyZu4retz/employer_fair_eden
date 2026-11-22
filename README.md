@@ -10,6 +10,14 @@ Mobile-first, Hebrew RTL web application built for tracking private law firms (5
 - **Details Accordion:** Reveals exact street address, public transit directions, firm size/headcount, practice areas, and Dun's 100 ranking on demand.
 - **Backup & Export:** Settings drawer includes full JSON backup/restore, Hebrew-compatible CSV export (UTF-8 BOM for Excel), and 2-step Reset.
 
+## Live Deployment (GitHub Pages — Best for iPhone at the Fair)
+
+Pushes to `main` automatically build and deploy to GitHub Pages via `.github/workflows/deploy.yml`:
+
+- **Live URL:** https://royzu4retz.github.io/employer_fair_eden/
+- **One-time GitHub setup:** Open your repository **Settings → Pages → Build and deployment → Source** and select **GitHub Actions**.
+- **iPhone tip:** Open the URL in Safari → tap **Share** → **Add to Home Screen** for full-screen offline-first use at the career fair.
+
 ## Running Locally & Opening on iPhone (Same Wi-Fi)
 
 ```bash
