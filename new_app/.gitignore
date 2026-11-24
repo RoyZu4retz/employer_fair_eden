@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Personal tracker & Excel data (local only)
+/data/
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db

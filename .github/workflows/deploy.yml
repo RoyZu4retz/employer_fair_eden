@@ -26,12 +26,25 @@ jobs:
         with:
           node-version: 22
           cache: 'npm'
+          cache-dependency-path: |
+            package-lock.json
+            new_app/package-lock.json
 
-      - name: Install dependencies
+      - name: Install new_app dependencies
+        working-directory: new_app
         run: npm ci
 
-      - name: Build
+      - name: Build new_app
+        working-directory: new_app
+        env:
+          VITE_BASE_PATH: /employer_fair_eden/
         run: npm run build
+
+      - name: Install fair app dependencies
+        run: npm ci
+
+      - name: Build previous fair app under /fair/
+        run: npx vite build --base=/employer_fair_eden/fair/ --outDir=new_app/dist/fair
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -39,7 +52,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: './new_app/dist'
 
   deploy:
     environment:
